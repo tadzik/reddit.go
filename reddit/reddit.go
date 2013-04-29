@@ -8,44 +8,40 @@ import (
 )
 
 type apiResponse struct {
-    Kind string `json:"kind"`
-    Data apiResponseData `json:"data"`
-}
-
-type apiResponseData struct {
-    Modhash string `json:"modhash"`
-    Children []apiChild `json:"children"`
-}
-
-type apiChild struct {
-    Kind string `json:"kind"`
-    Data Submission `json:"data"`
+    Kind string
+    Data struct {
+        Modhash string
+        Children []struct {
+            Kind string
+            Data Submission
+        }
+    }
 }
 
 type Submission struct {
-    Title string `json:"title"`
-    Domain string `json:"domain"`
-    Url string `json:"url"`
-    Author string `json:"author"`
-    Score int `json:"score"`
-    Selftext_html *string `json:"selftext_html"`
-    Subreddit string `json:"subreddit"`
-    Id string `json:"id"`
-    Clicked bool `json:"clicked"`
-    Over_18 bool `json:"over_18"`
-    Hidden bool `json:"hidden"`
-    Saved bool `json:"saved"`
-    Is_self bool `json:"is_self"`
-    Edited interface{} `json:"edited"` // bool or float64. reddit sucks
-    Thumbnail string `json:"thumbnail"`
-    Subreddit_id string `json:"subreddit_id"`
-    Downs int `json:"downs"`
-    Permalink string `json:"permalink"`
-    Name string `json:"name"`
-    Created float64 `json:"created"`
-    Created_utc float64 `json:"created_utc"`
-    Ups int `json:"ups"`
-    Num_comments int `json:"num_comments"`
+    Title string
+    Domain string
+    Url string
+    Author string
+    Score int
+    Selftext_html *string
+    Subreddit string
+    Id string
+    Clicked bool
+    Over_18 bool
+    Hidden bool
+    Saved bool
+    Is_self bool
+    Edited interface{}
+    Thumbnail string
+    Subreddit_id string
+    Downs int
+    Permalink string
+    Name string
+    Created float64
+    Created_utc float64
+    Ups int
+    Num_comments int
     // num_reports ?
     // distinguished ?
     // banned_by ?
