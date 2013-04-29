@@ -32,7 +32,7 @@ type Submission struct {
     Hidden bool
     Saved bool
     Is_self bool
-    Edited interface{}
+    Edited interface{} // false or float64
     Thumbnail string
     Subreddit_id string
     Downs int
